@@ -1,14 +1,24 @@
-function chessBoard(width,height){
-  for(let i=1;i<=height;i++){
-    if (i%2!=0) {
+function chessBoard(width, height) {
+  let board = ""; // The board start with empty line
 
-      console.log(" #".repeat(width/2));
+  for (let row = 0; row < height; row++) {
+    let line = ""; // From roq 1 to row height
 
-    }else{
-      console.log("# ".repeat(width/2));
+    for (let col = 0; col < width; col++) {
+      //from column 1 to column
+      if ((row + col) % 2 === 0) {
+        //row 1 col 1 we start with blac
+        line += "#";
+      } else {
+        line += " ";
+      }
     }
+
+    board += line + "\n";
   }
+
+  return board;
 }
 
+console.log(chessBoard(8, 8));
 
-chessBoard(8,8);
